@@ -1,32 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Abijit's Portfolio</title>
   <link rel="icon" href="assets/icons/favicon.ico" type="image/x-icon" />
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+    }
+  </script>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-gray-50 text-gray-800 dark:bg-gray-900 dark:text-white transition-colors duration-300">
   <header class="bg-gray-900 text-white py-6 shadow-md sticky top-0 z-10">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-center px-6">
       <div>
         <h1 class="text-3xl font-bold">Velayutha Abijit M</h1>
         <p class="text-sm text-gray-300">ECE Engineer | IoT & AI Enthusiast | Final Year Student</p>
       </div>
-      <nav class="mt-4 md:mt-0 space-x-4">
+      <nav class="mt-4 md:mt-0 space-x-4 flex items-center">
         <a href="#about" class="hover:text-blue-400">About</a>
         <a href="#experience" class="hover:text-blue-400">Experience</a>
         <a href="#projects" class="hover:text-blue-400">Projects</a>
         <a href="#skills" class="hover:text-blue-400">Skills</a>
         <a href="#contact" class="hover:text-blue-400">Contact</a>
         <a href="assets/resume.pdf" download class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Download Resume</a>
+        <button onclick="toggleDarkMode()" class="ml-2 text-sm px-3 py-1 bg-white text-gray-800 rounded hover:bg-gray-200 dark:bg-gray-700 dark:text-white dark:hover:bg-gray-600">🌙</button>
       </nav>
     </div>
   </header>
 
   <main class="max-w-4xl mx-auto px-6 py-12">
-    <section id="about" class="mb-16 text-center">
+    <section id="about" class="mb-16 text-center" data-aos="fade-up">
       <h2 class="text-3xl font-bold mb-4">About Me</h2>
       <img src="assets/images/profile.jpg" alt="Profile Photo" class="w-36 h-36 rounded-full mx-auto mb-4 shadow-lg" />
       <p class="text-lg">
@@ -34,38 +42,38 @@
       </p>
     </section>
 
-    <section id="experience" class="mb-16">
+    <section id="experience" class="mb-16" data-aos="fade-up">
       <h2 class="text-3xl font-bold text-center mb-6">Experience</h2>
       <div class="space-y-6">
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
           <h3 class="text-xl font-semibold">Internship at Iovate Technology</h3>
-          <p class="text-gray-600">15-day internship at a robotics development company where I gained experience in automation and real-time sensor systems.</p>
+          <p class="text-gray-600 dark:text-gray-300">15-day internship at a robotics development company where I gained experience in automation and real-time sensor systems.</p>
         </div>
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
           <h3 class="text-xl font-semibold">Product Development at PSG Polytechnic</h3>
-          <p class="text-gray-600">Worked on sensor-based systems and embedded projects with expert guidance. Hands-on experience with IoT components and project building.</p>
+          <p class="text-gray-600 dark:text-gray-300">Worked on sensor-based systems and embedded projects with expert guidance. Hands-on experience with IoT components and project building.</p>
         </div>
-        <div class="bg-white p-4 rounded shadow">
+        <div class="bg-white dark:bg-gray-800 p-4 rounded shadow">
           <h3 class="text-xl font-semibold">AI + ESP32-CAM Projects</h3>
-          <p class="text-gray-600">Developed object detection systems using AI models and ESP32-CAM, integrating image capture and processing with IoT-based alerts.</p>
+          <p class="text-gray-600 dark:text-gray-300">Developed object detection systems using AI models and ESP32-CAM, integrating image capture and processing with IoT-based alerts.</p>
         </div>
       </div>
     </section>
 
-    <section id="projects" class="mb-16">
+    <section id="projects" class="mb-16" data-aos="fade-up">
       <h2 class="text-3xl font-bold text-center mb-8">Projects</h2>
       <div class="grid gap-8 md:grid-cols-2">
-        <div class="bg-white rounded-lg shadow-md p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
           <img src="assets/images/project1.jpg" alt="Smart Monitoring System" class="rounded mb-3">
           <h3 class="text-xl font-semibold mb-2">Smart Global Monitoring System</h3>
           <p>An IoT-based environmental monitoring system using ESP32, sensors, GSM, GPS, Firebase, and AI-based alert system using TensorFlow Lite.</p>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
           <img src="assets/images/project2.jpg" alt="Landslide System" class="rounded mb-3">
           <h3 class="text-xl font-semibold mb-2">Landslide Prevention System</h3>
           <p>A real-time landslide prediction and alerting system using DHT, soil, rain, vibration sensors, and GSM with Firebase & mobile notifications.</p>
         </div>
-        <div class="bg-white rounded-lg shadow-md p-4">
+        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-4">
           <img src="assets/images/project3.jpg" alt="ESP32-CAM AI Detection" class="rounded mb-3">
           <h3 class="text-xl font-semibold mb-2">ESP32-CAM Based AI Detection</h3>
           <p>AI-powered camera system for object detection using ESP32-CAM, integrated with machine learning and image processing for real-time alerts.</p>
@@ -73,7 +81,7 @@
       </div>
     </section>
 
-    <section id="skills" class="mb-16 text-center">
+    <section id="skills" class="mb-16 text-center" data-aos="fade-up">
       <h2 class="text-3xl font-bold mb-6">Skills</h2>
       <div class="grid grid-cols-2 md:grid-cols-3 gap-4 text-lg">
         <span>Embedded C</span>
@@ -88,12 +96,12 @@
       </div>
     </section>
 
-    <section id="contact" class="text-center">
+    <section id="contact" class="text-center" data-aos="fade-up">
       <h2 class="text-3xl font-bold mb-6">Contact Me</h2>
-      <form class="max-w-xl mx-auto space-y-4">
-        <input type="text" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded">
-        <input type="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded">
-        <textarea placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded h-32"></textarea>
+      <form action="https://formspree.io/f/xrbkwpry" method="POST" class="max-w-xl mx-auto space-y-4">
+        <input type="text" name="name" placeholder="Your Name" required class="w-full p-3 border border-gray-300 rounded dark:bg-gray-800">
+        <input type="email" name="email" placeholder="Your Email" required class="w-full p-3 border border-gray-300 rounded dark:bg-gray-800">
+        <textarea name="message" placeholder="Your Message" required class="w-full p-3 border border-gray-300 rounded h-32 dark:bg-gray-800"></textarea>
         <button type="submit" class="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700">Send Message</button>
       </form>
     </section>
@@ -102,5 +110,12 @@
   <footer class="bg-gray-900 text-white text-center py-4">
     <p>&copy; 2025 Velayutha Abijit M. All rights reserved.</p>
   </footer>
+
+  <script>
+    function toggleDarkMode() {
+      document.documentElement.classList.toggle('dark');
+    }
+    AOS.init();
+  </script>
 </body>
 </html>
